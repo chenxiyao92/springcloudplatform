@@ -20,6 +20,7 @@
         <module>eureka-service-compose</module>
         <module>eureka-server</module>
         <module>microservice-api-gateway</module>
+        <module>microservice-config-server</module>
     </modules>
 
     <dependencyManagement>

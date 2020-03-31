@@ -15,4 +15,12 @@ public class MicroserviceConfigServerApplication {
         SpringApplication.run(MicroserviceConfigServerApplication.class, args);
     }
 
+    /**
+     * 请求配置文件的规则如下
+     * /{application}/{profile}/[label]
+     * /{application}-{profile}.yml
+     * /{label}/{application}-{profile}.yml
+     * /{application}-{profile}.properties
+     * /{label}/{application}-{profile}.properties
+     */
 }
