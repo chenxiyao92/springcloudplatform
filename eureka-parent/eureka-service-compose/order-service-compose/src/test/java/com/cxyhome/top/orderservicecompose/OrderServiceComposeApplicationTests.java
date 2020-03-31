@@ -1,0 +1,14 @@
+package com.cxyhome.top.orderservicecompose;
+
+//import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class OrderServiceComposeApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}

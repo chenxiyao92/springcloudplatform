@@ -1,0 +1,8 @@
+# Project exclude paths
+/common/target/
+/eureka-parent/eureka-server/target/
+/eureka-parent/eureka-service-compose/item-service-compose/target/
+/eureka-parent/eureka-service-compose/order-service-compose/target/
+/eureka-parent/microservice-api-gateway/target/
+/eureka-service-api/microservice-item/target/
+/eureka-service-api/microservice-order-api/target/
