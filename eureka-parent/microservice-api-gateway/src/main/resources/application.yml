@@ -18,10 +18,18 @@ eureka:
     instance-id: ${spring.application.name}###${server.port} #\u6307\u5B9A\u5B9E\u4F8Bid
 zuul:
   routes: #定义服务转发规则
+#    ，Zuul在注册到Eureka服务中心之后，它会为Eureka中的每个服务都创建一个默认的路由规则，
+#  默认规则的path会使用serviceId配置的服务名作为请求前缀,
     item-service: #item-service这个名字是任意写的
       path: /item-service/** #匹配item-service的请求app-item服务
-      #url: http://127.0.0.1:8081 #真正的微服务地址
+      #url: http://127.0.0.1:8081 #将服务路由到指定的url上 定死, 不推荐
       serviceid: item-service-compose
-    order-service: #\u540D\u5B57\u5C3D\u91CF\u548C\u4E1A\u52A1\u7CFB\u7EDF\u76F8\u5173
-      path: /order-service/** #\u5339\u914Dorder-service\u7684\u8BF7\u6C42app-order\u670D\u52A1
-      serviceid: order-service-compose
+#    order-service:
+#      path: /order-service/**
+#      serviceid: order-service-compose
+#      忽略指定的微服务  ,默认会给所有服务配置路由
+#  如果使用*可忽略所有服务只路由 配置中的服务
+#  如果不忽略 手动配置的路由 也会生效    自动配置的也会生效
+  ignored-services: order-service-compose
+#  通过正则忽略 路由映射
+#  ignored-patterns:

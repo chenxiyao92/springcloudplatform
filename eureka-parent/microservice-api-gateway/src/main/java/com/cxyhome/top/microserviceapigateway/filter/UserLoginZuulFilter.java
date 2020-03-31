@@ -10,6 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 @Component
 public class UserLoginZuulFilter extends ZuulFilter {
 
+    /**
+     * 是否通过这个过滤器，默认为true，改成false则不启用
+     * @return
+     */
     @Override
     public boolean shouldFilter() {
         return true; // 该过滤器需要执行
@@ -30,11 +34,13 @@ public class UserLoginZuulFilter extends ZuulFilter {
     }
 
     /**
-     * a)pre：请求在被路由之前执行
-     * b)routing：在路由请求时调用
-     * c)post：在routing和errror过滤器之后调用
-     * d)error：处理请求时发生错误调用
-     * @return
+     * 过滤器类型选择：
+     * pre 为路由前
+     * route 为路由过程中
+     * post 为路由过程后
+     * error 为出现错误的时候
+     * 同时也支持static ，返回静态的响应，详情见StaticResponseFilter的实现
+     * 以上类型在会创建或添加或运行在FilterProcessor.runFilters(type)
      */
      @Override
     public String filterType() {
@@ -42,11 +48,13 @@ public class UserLoginZuulFilter extends ZuulFilter {
     }
 
     /**
-     * 通过返回的int值来定义过滤器的执行顺序，数字越小优先级越高。
+     *  用来过滤器排序执行的 通过返回的int值来定义过滤器的执行顺序，数字越小优先级越高。
      * @return
      */
     @Override
     public int filterOrder() {
         return 0;// 设置执行顺序为0
     }
+
+
 }

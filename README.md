@@ -6,6 +6,8 @@
 
 9201 api-gateway
 
+9301 config-server
+
 9111  item1
 
 9111  item2
